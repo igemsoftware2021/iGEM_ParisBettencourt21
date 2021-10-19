@@ -9,11 +9,11 @@ import numpy as np
 import argparse
 import cv2
 import matplotlib.pyplot as plt
+import os
 
 # Argument parser
 ap = argparse.ArgumentParser()
-ap.add_argument("-i", "--image", type=str, required=True,
-	help="path to input image")
+ap.add_argument("-i", "--image", type=str, required=True, help="path to input image")
 args = vars(ap.parse_args())
 
 img = cv2.imread(args["image"])
@@ -21,12 +21,10 @@ img = cv2.imread(args["image"])
 # removing pixel-length borders to clean the images
 img = img[2:-2,2:-2]
 cv2.imshow('Cleaned-original image', img)
+cv2.imwrite(os.path.join('/home/abhay','Cleaned image.png'), img)
 
 # subsampling from image for test
 # img = img[:300,:300]
-
-# Load in image, convert to gray scale, and Otsu's threshold
-image = cv2.pyrMeanShiftFiltering(img,15,30)
 
 # Grayscaling
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -49,13 +47,16 @@ blur = cv2.GaussianBlur(thresh1,(5,5),cv2.BORDER_DEFAULT)
 
 # Thresholding Level 2
 (T, thresh2) = cv2.threshold(blur, 200, 255, cv2.THRESH_BINARY) # based on 4, 6 and 8.png
-cv2.imshow("Threshold Binary 2", thresh2)
 
 # Contour mapping and counting
 contours, hier = cv2.findContours(thresh2, cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_NONE)
 count = len(contours)
+cv2.imshow("Contour-ready image with cell-count: "+str(count) +" cell(s)", thresh2)
+cv2.imwrite(os.path.join('/home/abhay',"Contour-ready.png"), thresh2)
+
 # cv2.drawContours(thresh, contours, -1, (0,255,0), 3)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
 print("The number of cells in Fluorescent(GFP) image " + str(args["image"]).split("/")[-1] + " is ")
 print(count)
-cv2.waitKey(0)
 
