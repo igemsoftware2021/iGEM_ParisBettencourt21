@@ -48,4 +48,8 @@ The program outputs:
 Example above: cell-count is 18
 
 ## Another (Mini)cells count example
+<<<<<<< HEAD
 ![Example: Cells/mgfp01.JPG](https://drive.google.com/uc?export=view&id=1nlJ8HRB027Tzt4OOfzwPzgKS3BS7vlbf)
+=======
+![Example: Cells/mgfp01.JPG](https://drive.google.com/uc?export=view&id=1nlJ8HRB027Tzt4OOfzwPzgKS3BS7vlbf)
+>>>>>>> 828945070054108f80ae3c2d0883f3e69481ac3d

@@ -21,7 +21,6 @@ img = cv2.imread(args["image"])
 # removing pixel-length borders to clean the images
 img = img[2:-2,2:-2]
 cv2.imshow('Cleaned-original image', img)
-cv2.imwrite(os.path.join('/home/abhay','Cleaned image.png'), img)
 
 # subsampling from image for test
 # img = img[:300,:300]
@@ -38,7 +37,7 @@ sharpen = cv2.filter2D(gray, -1, sharpen_kernel3)
 # cv2.imshow('sharpen', sharpen)
 
 # Thresholding Level 1
-(T, thresh1) = cv2.threshold(sharpen, 160, 255, cv2.THRESH_BINARY) # based on 4, 6 and 8.png
+(T, thresh1) = cv2.threshold(sharpen, 160, 255, cv2.THRESH_BINARY)  # thesholds based on available images
 #cv2.imshow("Threshold Binary 1", thresh1)
 
 # Gaussian Blur
@@ -46,13 +45,12 @@ blur = cv2.GaussianBlur(thresh1,(5,5),cv2.BORDER_DEFAULT)
 #cv2.imshow("Gaussian Blur", blur)
 
 # Thresholding Level 2
-(T, thresh2) = cv2.threshold(blur, 200, 255, cv2.THRESH_BINARY) # based on 4, 6 and 8.png
+(T, thresh2) = cv2.threshold(blur, 200, 255, cv2.THRESH_BINARY) 
 
 # Contour mapping and counting
 contours, hier = cv2.findContours(thresh2, cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_NONE)
 count = len(contours)
 cv2.imshow("Contour-ready image with cell-count: "+str(count) +" cell(s)", thresh2)
-cv2.imwrite(os.path.join('/home/abhay',"Contour-ready.png"), thresh2)
 
 # cv2.drawContours(thresh, contours, -1, (0,255,0), 3)
 cv2.waitKey(0)
