@@ -56,3 +56,16 @@ Example above: cell-count is 18
  It uses the selenium python extensions to 
  - Upload a set of images from a local folder to the igem servers
  - Store the data of the uploaded files for accessible wiki editing 
+
+## minicell producing culture models 
+
+There are two version of simulation for culture of minicell producing strains:
+- version 1 is an algorithmic approach for low number of cells
+- version 2 is another approach using approximation of partial differential equations
+
+## version 1
+
+On the first version called **minicell_bioproduction_model_v1.py** different simulation 
+where implementated according to different assumptions. 
+The ouput are graphs of cell growing and minicell/mothercell counting
+
