@@ -49,3 +49,14 @@ Example above: cell-count is 18
 
 ## Another (Mini)cells count example
 ![Example: Cells/mgfp01.JPG](https://drive.google.com/uc?export=view&id=1nlJ8HRB027Tzt4OOfzwPzgKS3BS7vlbf)
+
+
+
+
+## Image uploading
+ 
+ There is one script dedicated to automatized web navigation. 
+ It uses the selenium python extensions to 
+ - upload a set of image from a local file to the igem servers
+ - store the data of the uploaded file for accessible wiki editing
+ 
