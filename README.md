@@ -55,8 +55,8 @@ Example above: cell-count is 18
 
 ## Image uploading
  
- There is one script dedicated to automatized web navigation. 
+ There is one script dedicated to automated web navigation. 
  It uses the selenium python extensions to 
- - upload a set of image from a local file to the igem servers
- - store the data of the uploaded file for accessible wiki editing
+ - upload a set of images from a local folder to the igem servers
+ - store the data of the uploaded files for accessible wiki editing
  
