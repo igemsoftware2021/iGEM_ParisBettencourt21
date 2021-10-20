@@ -50,13 +50,9 @@ Example above: cell-count is 18
 ## Another (Mini)cells count example
 ![Example: Cells/mgfp01.JPG](https://drive.google.com/uc?export=view&id=1nlJ8HRB027Tzt4OOfzwPzgKS3BS7vlbf)
 
-
-
-
-## Image uploading
+## Image uploader
  
- There is one script dedicated to automated web navigation. 
+ The **image_uploading_bot.py** script is dedicated to automated web navigation. 
  It uses the selenium python extensions to 
- - upload a set of images from a local folder to the igem servers
- - store the data of the uploaded files for accessible wiki editing
- 
+ - Upload a set of images from a local folder to the igem servers
+ - Store the data of the uploaded files for accessible wiki editing 
