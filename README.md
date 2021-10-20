@@ -10,7 +10,7 @@ The first python program(**gfpminicell_count.py**) involves the following image 
 - gaussian blurring
 - binary thresholding for preparing the processed image
 
-The second program(**cell_count.py**) involves additional sharpening and thresholding techniques before gaussian blurring in order to capture the full contours of different sized images. So the in sequence the image goes through cleaning -> gray-scaling -> filter-convolved sharpening -> binary thresholding -> gaussian blurring -> final binary thresholding.
+The second program(**cell_count.py**) involves additional sharpening and thresholding techniques before gaussian blurring in order to capture the full contours of different sized images. So in sequence, the image goes through cleaning -> gray-scaling -> filter-convolved sharpening -> binary thresholding -> gaussian blurring -> final binary thresholding.
 
 For the final counting, a procedure called [contour mapping from OpenCV](https://docs.opencv.org/4.5.3/d4/d73/tutorial_py_contours_begin.html) is used and the corresponding contours are counted as the number of cells seen on the processed images. 
 
