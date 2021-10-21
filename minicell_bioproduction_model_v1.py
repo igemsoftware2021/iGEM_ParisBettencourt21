@@ -10,7 +10,7 @@ import random as rd
 ### parameters ###
 
 ### E.coli parameters
-growing_rate = 0.04
+growth_rate = 0.04
 e_max_size = 2
 e_min_size = 1
 
@@ -52,7 +52,7 @@ def minicell_production(cell,t,tspan):
 ### simulation
 for t in time:
     for i in range(len(cell_count)):
-        cell_count[i] = round(cell_count[i] + cell_count[i]*growing_rate*tspan,5)
+        cell_count[i] = round(cell_count[i] + cell_count[i]*growth_rate*tspan,5)
         cell_count[i], minicell  = minicell_production(cell_count[i],t,tspan)
         if minicell > 0:
             minicell_count.append(minicell)
@@ -126,7 +126,7 @@ def minicell_production(cell,t,tspan,rate_sum):
 ### simulation
 for t in time:
     for i in range(len(cell_count)):
-        cell_count[i] = round(cell_count[i] + cell_count[i]*growing_rate*tspan,5)
+        cell_count[i] = round(cell_count[i] + cell_count[i]*growth_rate*tspan,5)
         if i == 0:
             rate_sum = rate_sum + (minicell_production_rate*cell_count[i]*tspan)
         cell_count[i], minicell  = minicell_production(cell_count[i],t,tspan,rate_sum)
@@ -202,7 +202,7 @@ def minicell_production(cell,tspan):
 ### simulation
 for t in time:
     for i in range(len(cell_count)):
-        cell_count[i] = round(cell_count[i] + cell_count[i]*growing_rate*tspan,5)
+        cell_count[i] = round(cell_count[i] + cell_count[i]*growth_rate*tspan,5)
         cell_count[i], minicell  = minicell_production(cell_count[i],tspan)
         if minicell > 0:
             minicell_count.append(minicell)
@@ -263,7 +263,7 @@ plt.close()
 
 minicell_production_rate = 0.02
 
-### functions ###
+## functions ###
 
 def minicell_production(cell,tspan):
     minicell = 0
@@ -275,10 +275,10 @@ def minicell_production(cell,tspan):
         cell = cell - minicell
     return cell, minicell
 
-### simulation
+## simulation
 for t in time:
     for i in range(len(cell_count)):
-        cell_count[i] = round(cell_count[i] + cell_count[i]*growing_rate*tspan,5)
+        cell_count[i] = round(cell_count[i] + cell_count[i]*growth_rate*tspan,5)
         cell_count[i], minicell  = minicell_production(cell_count[i],tspan)
         if minicell > 0:
             minicell_count.append(minicell)
@@ -318,7 +318,7 @@ plt.show()
 plt.close()
 
 
-### counts
+## counts
 
 final_population = counts[-1]
 
@@ -330,5 +330,16 @@ plt.plot(time,[len(x[0]) for x in counts], label='n of cells')
 plt.plot(time,[len(x[1]) for x in counts], label='n of minicells')
 plt.yscale('log')
 plt.legend()
+plt.xlabel('time')
+plt.ylabel('count')
+plt.show()
+plt.close()
+
+# plot ration
+plt.figure()
+plt.plot(time,[len(x[1])/len(x[0]) for x in counts], label='ratio minicells/cells')
+plt.legend()
+plt.xlabel('time')
+plt.ylabel('ratio')
 plt.show()
 plt.close()
