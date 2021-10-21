@@ -72,3 +72,8 @@ On the first version - **minicell_bioproduction_model_v1.py**, different simulat
 On the second version - **minicell_bioproduction_model_v2.py**, a set of differential equations have been used based on growth-fragmentation problem.
 The ouputs are graphs of cell-growth and minicell/mothercell counting
 
+Simulated example graphs are below:
+
+![Example: SimulatedGraph1.png](https://drive.google.com/uc?export=view&id=12TEnZkfk2FyDWZrhU7kaQkPhS3kEb3F4)
+
+![Example: SimulatedGraph2.png](https://drive.google.com/uc?export=view&id=1lIFtTahb-01HhQznFOWtZnw4RKbiweHz)
