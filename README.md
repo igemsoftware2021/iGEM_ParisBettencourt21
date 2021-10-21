@@ -69,3 +69,9 @@ On the first version called **minicell_bioproduction_model_v1.py** different sim
 where implementated according to different assumptions. 
 The ouput are graphs of cell growing and minicell/mothercell counting
 
+## version 2
+
+On the second version called **minicell_bioproduction_model_v2.py** as set of differential 
+equations have been used based on growth-fragmentation problem.
+The ouput are graphs of cell growing and minicell/mothercell counting
+
